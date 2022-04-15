@@ -1,8 +1,11 @@
 import pandas as pd
 df = open('INTRODUCCION POO\Ejercicio-POO-con-archivos\Clases\calificaciones.csv', 'r')
 df = pd.read_csv(df, sep = ';')
+
+# 1
 df = df.sort_values(by = 'Apellidos')
 
+# 2
 df = df.fillna(0)
 columnas = df.columns.values
 
@@ -45,8 +48,7 @@ df['Nota Parcial 2'] = nota_final_parcial_2
 df['Nota Practicas'] = nota_final_practicas
 df['Nota final'] = (df['Nota Parcial 1'] + df['Nota Parcial 2']) * .3 + df['Nota Practicas'] * .4
 
-print(df['Asistencia'][6])
-
+# 3
 Aprobado = []
 for i in range(len(df)):
     if df.iloc[i, 2] >= 75 and df.iloc[i, 9] >= 4 and df.iloc[i, 10] >= 4 and df.iloc[i, 11] >= 4 and df.iloc[i, 12] >= 5:
