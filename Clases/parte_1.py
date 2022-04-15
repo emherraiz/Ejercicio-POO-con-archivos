@@ -1,4 +1,4 @@
-class parte_1:
+class Parte_1:
     def __init__(self, df):
         self.df = df
 
