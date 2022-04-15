@@ -10,11 +10,12 @@ columnas = df.columns.values
 
 df['Asistencia'] = df['Asistencia'].str.split('%').apply(lambda x: x.pop(0))
 print(df['Asistencia'])
+df = df.astype(str)
 
-for i in columnas[:2]:
-    df[i] = df[i].str.split(',').apply(lambda x: '.'.join(x))
+for i in columnas[2:]:
+    df[i] = df[i].str.split(',').apply(lambda x: '.'.join(x[:]))
 
-#df = df[columnas[:2]] + df[columnas[2:]].astype(float)
+df[columnas[2:]] = df[columnas[2:]].astype(float)
 
 print(df)
 #df.loc[df['Parcial1'] < df['Ordinario1']]
