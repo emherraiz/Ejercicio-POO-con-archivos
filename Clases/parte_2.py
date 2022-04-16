@@ -1,4 +1,5 @@
-from parte_1 import *
+from parte_1 import Parte_1
+import pandas as pd
 class Parte_2(Parte_1):
     def __init__(self, df):
         super().__init__(df)
@@ -9,7 +10,7 @@ class Parte_2(Parte_1):
 
         # Rellenamos con 0 las celdas vacías
         df = df.fillna(0)
-        columnas = df.column.values
+        columnas = df.columns.values
 
         # Quitamos el porcentaje para poder pasarlo a float
         df['Asistencia'] = df['Asistencia'].str.split('%').apply(lambda x: x.pop(0))
@@ -24,10 +25,6 @@ class Parte_2(Parte_1):
         # Ahora, a partir de la segunda columna (apellidos) cambiamos a float para poder operar
         df[columnas[2:]] = df[columnas[2:]].astype(float)
 
-        return df
-
-    def calcular_notas(self):
-        df = self.ajustar()
         # Creamos listas vacias donde añadiremos las notas finales
         nota_final_parcial_1 = list()
         nota_final_parcial_2 = list()
@@ -65,4 +62,16 @@ class Parte_2(Parte_1):
 
         return df
 
+    def __str__(self):
+        print(df)
+        return 'hola'
 
+
+
+df = open('INTRODUCCION POO\Ejercicio-POO-con-archivos\Clases\calificaciones.csv', 'r')
+df = pd.read_csv(df, sep = ';')
+
+
+Resultado = Parte_2(df)
+
+print(Resultado.ajustar())

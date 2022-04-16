@@ -3,4 +3,5 @@ class Parte_1:
         self.df = df
 
     def ordenar(self):
-        return self.df.sort_values(by = 'Apellidos')
+        ordenado = self.df.sort_values(by = 'Apellidos')
+        return ordenado
