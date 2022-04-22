@@ -1,5 +1,4 @@
 from Clases.parte_2 import *
-import pandas as pd
 class Parte_3(Parte_2):
     def __init__(self, df):
         super().__init__(df)
@@ -19,6 +18,3 @@ class Parte_3(Parte_2):
 
         # Devolvemos el Dataframe final
         return df
-
-    def __str__(self):
-        print(df)

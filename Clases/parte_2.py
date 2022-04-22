@@ -1,5 +1,4 @@
 from Clases.parte_1 import Parte_1
-import pandas as pd
 class Parte_2(Parte_1):
     def __init__(self, df):
         super().__init__(df)
@@ -61,8 +60,4 @@ class Parte_2(Parte_1):
         df['Nota final'] = (df['Nota Parcial 1'] + df['Nota Parcial 2']) * .3 + df['Nota Practicas'] * .4
 
         return df
-
-    def __str__(self):
-        print(df)
-        return 'hola'
 
