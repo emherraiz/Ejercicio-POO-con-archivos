@@ -1,4 +1,4 @@
-from parte_1 import Parte_1
+from Clases.parte_1 import Parte_1
 import pandas as pd
 class Parte_2(Parte_1):
     def __init__(self, df):
@@ -66,12 +66,3 @@ class Parte_2(Parte_1):
         print(df)
         return 'hola'
 
-
-
-df = open('INTRODUCCION POO\Ejercicio-POO-con-archivos\Clases\calificaciones.csv', 'r')
-df = pd.read_csv(df, sep = ';')
-
-
-Resultado = Parte_2(df)
-
-print(Resultado.ajustar())
